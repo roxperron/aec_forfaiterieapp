@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Search } from '../search';
-import { Package } from '../package';
+
 
 
 @Component({
@@ -10,11 +10,11 @@ import { Package } from '../package';
 })
 export class SearchFormComponent implements OnInit {
   @Input() search?: Search;
-  @Input() package?: Package;
   @Output() searchChange = new EventEmitter();
+  
 
 changeName(newName: string){
-  this.searchChange.emit();
+  this.searchChange.emit(this.changeName);
 }
 
 

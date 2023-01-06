@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PACKAGES } from '../mock-packages';
 
+
+
 @Component({
   selector: 'app-packages-list',
   templateUrl: './packages-list.component.html',
@@ -8,7 +10,7 @@ import { PACKAGES } from '../mock-packages';
 })
 export class PackagesListComponent implements OnInit {
 packages = PACKAGES
-
+search = '';
 
   constructor() { }
 

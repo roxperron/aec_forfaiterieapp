@@ -1,0 +1,26 @@
+
+<section class="minicard__container">
+    <app-mini-card-package *ngFor="let package of packages" [package]="package"></app-mini-card-package>
+</section>
+
+<section>
+    <app-search-form></app-search-form>
+</section>
+
+<section>
+    <app-package *ngFor="let package of packages" [package]="package"></app-package>
+</section>
+
+<section>
+   <app-package-form></app-package-form>
+</section>
+
+<section>
+    <app-reviews-form></app-reviews-form>
+</section>
+
+<section>
+    <app-contact-form></app-contact-form>
+</section>
+
+

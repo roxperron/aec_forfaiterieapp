@@ -1,0 +1,43 @@
+
+.packageslist__container{
+    padding: 15px;
+    margin:10px;
+}
+
+.package__card{
+    background-color:#3c6e71 ;
+    color:#FFFFFF;
+    font-family: Gilda Display;
+    font-weight: bolder;
+    padding: 15px;
+    margin:5px;
+}
+
+.mat-card-title{
+    text-align: center;
+    font-family: Cookie;
+    font-size: 48px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.mat-card-subtitle{
+    text-align: center;
+    font-family: Gilda Display;
+    font-weight: bolder;
+    color:#FFFFFF;
+    padding: 10px;
+}
+
+p{
+  margin: 5px;
+  padding-left: 25px;
+}
+
+.packagesicon__container, .subtitle__container, .period__container, .lodging__infos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin:5px;
+}

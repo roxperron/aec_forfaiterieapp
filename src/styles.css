@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300&family=Cookie&family=Gilda+Display&family=Great+Vibes&display=swap');
+
+.body__container{
+    background-color: #284b63;
+    margin:200px;
+    padding: 100px;
+}

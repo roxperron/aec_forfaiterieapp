@@ -1,0 +1,29 @@
+.packageform{
+    background-color: #d9d9d9;
+    padding: 50px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+.packageform__title{
+    font-family: Cookie; 
+    font-size: 50px;
+    padding: 50px;
+    color: #284b63;
+}
+
+.formError{
+    color:#FFFFFF;
+    border: 2px solid crimson;
+}
+
+
+
+.submitPackage--button{
+    color:#FFFFFF;
+    background-color: #284b63;
+    padding: 5px;
+    border-radius: 5%;
+}
+
+

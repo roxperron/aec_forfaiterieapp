@@ -1,0 +1,110 @@
+
+<div class="contactform">
+    <h3 class="formcontact__title">Formulaire de contact</h3>
+<div >
+  <form class="d-flex flex-column justify-content-between align-items-center" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Prénom</mat-label>
+        <input matInput type="text" placeholder="Prénom" id="firstName" formControlName="firstName">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Nom de famille</mat-label>
+        <input matInput type="text" placeholder="Nom de famille" id="lastName" formControlName="lastName" >
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Courriel</mat-label>
+        <input matInput type="email" placeholder="Courriel" id="email" formControlName="email">
+      </mat-form-field>
+    </div>
+
+    <div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Numéro de téléphone</mat-label>
+        <input matInput type="number" placeholder="Numéro de téléphone" id="phoneNumber" formControlName="phoneNumber">
+      <!--   <span *ngIf="contactForm.get('contactForm.communicationPhone').valid">
+             Vous avez sélectionner le téléphone comme préférence de communication. Veuillez entrez un numéro de téléphone.
+        </span> -->
+      </mat-form-field>
+    </div>
+
+
+    <div>
+      <mat-radio-group aria-label="Préférence de communication" >
+        <mat-radio-button value="1" formControlName="communicationEmail">Courriel</mat-radio-button>
+        <mat-radio-button value="2" formControlName="communicationPhone">Téléphone</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Motif</mat-label>
+        <input type="text" placeholder="Inscrire un motif" aria-label="Motif" matInput formControlName="reason">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option>
+            Vacances
+          </mat-option>
+          <mat-option>
+            Voyage d'affaires
+          </mat-option>
+          <mat-option>
+            Long weekend
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Message</mat-label>
+        <textarea matInput formControlName="comment"></textarea>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Réponse avant le :</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="replyBefore">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label formControlName="knownUs">Comment avez-vous entendu parler de nous ? </mat-label>
+        <mat-select>
+          <mat-option>
+            Facebook
+          </mat-option>
+          <mat-option>
+            Instagram
+          </mat-option>
+          <mat-option>
+            Twitter
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-slide-toggle formControlName="newsletter">Recevoir notre inforlettre</mat-slide-toggle>
+    </div>
+
+    <div>
+        <button mat-button class="submitContact--button" type="submit" [disabled]="!contactForm.valid">Soumettre</button>
+    </div>
+
+  </form>
+
+</div>
+
+</div>

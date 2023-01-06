@@ -1,0 +1,22 @@
+.searchcontainer{
+    background:#d9d9d9;
+    color:#284b63;
+    border-radius: 5px;
+    margin: 50px;
+    padding: 50px;
+}
+
+.search__title{
+    font-family: Cookie; 
+    font-size: 50px;
+    padding: 50px;
+    text-align: center;
+}
+
+.submitSearch--button{
+    color:#FFFFFF;
+    background-color: #284b63;
+    padding: 5px;
+    border-radius: 5%;
+}
+

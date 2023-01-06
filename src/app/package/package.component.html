@@ -1,0 +1,69 @@
+
+<div class="packageslist__container">
+ 
+<!-- Pour appliquer une couleur précise selon le rang du forfait -->
+<mat-card class="package__card" [ngStyle]="{'background-color':(package?.prenium ? '#e6b861': '')}">
+
+    <mat-card-header>
+          <mat-card-title>{{package?.name}}</mat-card-title>
+          <mat-card-subtitle> Description: {{package?.description}}</mat-card-subtitle>
+         
+    </mat-card-header>
+   
+    <mat-card-content>
+            <div class="subtitle__container">
+              <mat-card-subtitle>Code: {{package?.code}}</mat-card-subtitle>
+              <mat-card-subtitle>Rang du forfait: {{package?.rank}}</mat-card-subtitle>
+            </div>
+
+             <div class="lodging__infos">
+                <p>Nom: {{package?.lodging?.name}}</p>
+                <p>Description: {{package?.lodging?.description}}</p>
+                <p>Adresse: {{package?.lodging?.address}} {{package?.lodging?.city}} {{package?.lodging?.postalcode}}</p>
+                <p>Numéro de téléphone: {{package?.lodging?.phonenumber}}</p>
+                <p>Courriel: {{package?.lodging?.email}}</p>
+                <p>Site web: {{package?.lodging?.website}}</p>
+            </div>
+       
+
+          <div>
+            <div class="period__container">
+                <p>En vigeur du: {{package?.startdate}}</p>
+                <p>Jusqu'au: {{package?.enddate}}</p>
+            </div>
+            <div>
+              
+                      <!-- Utiliser le composent réutilisable du prix régulier et afficher le prix promotionnel sil y en a un -->
+               
+              <app-price [price]="package?.price || 0" [newprice]="package?.newprice || 0"></app-price><br>
+          </div>
+         </div>
+
+          <div>
+            <mat-card-subtitle>Catégories: {{package?.categories}}</mat-card-subtitle>
+          </div>
+
+          <ng-container>
+            <mat-card-subtitle *ngFor="let r of package?.reviews" >
+              Note sur 10 : {{r.rating}}
+              Commentaire : {{r.comments}}
+            </mat-card-subtitle>
+           
+          </ng-container>
+        </mat-card-content>
+      
+        <div>
+          <mat-card-actions class="packagesicon__container">
+            <button mat-icon-button><span class="infopackage__icon">
+              <mat-icon>info </mat-icon>
+              </span></button>
+            <button mat-icon-button><span class="buypackage__icon">
+            <mat-icon>   add_shopping_cart</mat-icon>
+              </span></button>
+            <button mat-icon-button><span class="favoritepackage__icon">
+              <mat-icon> favorite</mat-icon>
+              </span></button>
+          </mat-card-actions>
+      </div>
+  </mat-card>
+</div>

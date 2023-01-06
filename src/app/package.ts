@@ -1,5 +1,6 @@
 import { Lodging } from "./lodging";
 import { Reviews } from "./review";
+import { Search } from "./search";
 
 
 export interface Package {
@@ -16,5 +17,5 @@ export interface Package {
   lodging: Lodging;
   categories: string[];
   reviews:Reviews[];
-  
+  search:Search[];
 }

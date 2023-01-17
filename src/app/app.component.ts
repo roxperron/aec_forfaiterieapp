@@ -6,12 +6,15 @@ import { Search } from './search';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'Forfaiterie';
   search : Search = {
     name: '',
     categorie: '',
-    price:0
+    price: 0
+    
+
   }
 
 }

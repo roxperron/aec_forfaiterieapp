@@ -1,10 +1,17 @@
 <div class="searchcontainer ">
     <h2 class="search__title">Recherchez un forfait</h2>
+    <p class="text-center py-5">Vous pouvez effectuer une recherche de forfaits par nom, par catégorie ou par prix.</p>
     <form class="d-flex justify-content-between align-items-center" #searchForm='ngForm'>
       <div>
         <mat-form-field appearance="fill">
-          <mat-label> Par nom:</mat-label>
-          <input matInput type="text"id="packageNameSearch" maxlength="100">
+          <mat-label> Par nom: </mat-label>
+          <input 
+          matInput 
+          type="text"
+          id="packageNameSearch" 
+          maxlength="100"
+          [ngModel]="search.name" 
+          (ngModelChange)="changeName($event)">
         </mat-form-field>
       </div>
   
@@ -12,7 +19,10 @@
       <div>
         <mat-form-field appearance="fill">
           <mat-label>Par catégories :</mat-label>
-          <mat-select type="value">
+          <mat-select 
+          type="value" 
+          [ngModel]="search.categorie 
+          (ngModelChange)="changeCategorie($event)">
             <mat-option value="one">Restauration</mat-option>
             <mat-option value="two">Spa</mat-option>
             <mat-option value="three">Massothérapie</mat-option>
@@ -24,7 +34,12 @@
       <div>
         <mat-form-field appearance="fill" floatLabel="always">
           <mat-label>Par prix:</mat-label>
-          <input matInput type="number" class="example-right-align" min="250">
+          <input 
+          matInput 
+          type="number" 
+          class="example-right-align" 
+          min="250"
+          [ngModel]="search.price" (ngModelChange)="changePrice($event)">
           <span matTextPrefix>$&nbsp;</span>
         </mat-form-field>
       </div>

@@ -1,9 +1,12 @@
+
 <div>
- 
+    {{search.name}}
+    {{search.categorie}}
+    {{search.price}}
 </div>
 
+<app-search-form [(search)]="search"></app-search-form>
 
-
-<app-packages-list></app-packages-list>
+<app-packages-list [search]="search"></app-packages-list>
 
 <router-outlet></router-outlet>

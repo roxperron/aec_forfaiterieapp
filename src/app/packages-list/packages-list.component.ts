@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PACKAGES } from '../mock-packages';
+import { Input } from '@mui/material';
+import { Search } from '../search';
 
 
 
@@ -10,7 +12,7 @@ import { PACKAGES } from '../mock-packages';
 })
 export class PackagesListComponent implements OnInit {
 packages = PACKAGES
-search = '';
+@Input() search: Search;
 
   constructor() { }
 

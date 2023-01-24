@@ -1,6 +1,6 @@
 
 <section class="minicard__container">
-    <app-mini-card-package *ngFor="let package of packages" [package]="package"></app-mini-card-package>
+    <app-mini-card-package *ngFor="let package of packages | premium" [package]="package"></app-mini-card-package>
 </section>
 
 
@@ -21,3 +21,4 @@
 </section>
 
 
+<!-- ngFor ="let package of packages [package]="package" | premium -->

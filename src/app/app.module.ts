@@ -33,6 +33,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { PackgagebylodgingPipe } from './packgagebylodging.pipe';
+/* import { PremiumPipe } from './premium.pipe'; */
 
 
 
@@ -50,6 +52,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ReviewsFormComponent,
     ContactFormComponent,
     SearchFormComponent,
+    PackgagebylodgingPipe,
+  /*   PremiumPipe, */
   ],
 
   imports: [

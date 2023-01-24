@@ -1,25 +1,22 @@
+<mat-card class="prenium__package" *ngIf="package?.prenium === true" [ngStyle]="{'background-color':(package?.prenium ? '#e6b861': '')}">
+  <mat-card-header>
+    <mat-card-title>{{package?.name}}</mat-card-title>
+  </mat-card-header>
 
-          <!-- Afficher les forfait prenium seulement -->
-            <mat-card class="prenium__package" *ngIf="package?.prenium === true" [ngStyle]="{'background-color':(package?.prenium ? '#e6b861': '')}">
-                    <mat-card-header>
-                      <mat-card-title>{{package?.name}}</mat-card-title>
-                    </mat-card-header>
-                
-                    <mat-card-content>
-                      <mat-card-subtitle>Établissement: {{package?.lodging?.name}}</mat-card-subtitle>
-                      <mat-card-subtitle>Date de début: {{package?.startdate}}</mat-card-subtitle>
-                      <mat-card-subtitle>Date de fin: {{package?.enddate}}</mat-card-subtitle>
-                      <!-- Utiliser le composent réutilisable du prix régulier et afficher le prix promotionnel s'il y en a un -->
-                      <app-price [price]="package?.price || 0 " [newprice]="package?.newprice || 0"></app-price>
-                    </mat-card-content>
+  <mat-card-content>
+    <mat-card-subtitle>Établissement: {{package?.lodging?.name}}</mat-card-subtitle>
+    <mat-card-subtitle>Date de début: {{package?.startdate | date}}</mat-card-subtitle>
+    <mat-card-subtitle>Date de fin: {{package?.enddate}}</mat-card-subtitle>
+    <app-price [price]="package?.price || 0" [newprice]="package?.newprice || 0 "></app-price>
+  </mat-card-content>
 
-                    <mat-card-actions>
-                      <button mat-icon-button><span class="minicard__icon">
-                        <mat-icon>info </mat-icon>
-                        </span></button>
-                    </mat-card-actions>
-            </mat-card>
+  <mat-card-actions>
+    <button mat-icon-button><span class="minicard__icon">
+      <mat-icon>info </mat-icon>
+      </span></button>
+  </mat-card-actions>
+</mat-card>
+
       
-
 
 

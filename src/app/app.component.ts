@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Search } from './search';
+/* import { Search } from './search'; */
 
 @Component({
   selector: 'app-root',
@@ -9,12 +9,12 @@ import { Search } from './search';
 
 export class AppComponent {
   title = 'Forfaiterie';
-  search : Search = {
+/*   search : Search = {
     name: '',
     categorie: '',
     price: 0
     
 
-  }
+  } */
 
 }

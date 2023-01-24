@@ -10,8 +10,7 @@
           type="text"
           id="packageNameSearch" 
           maxlength="100"
-          [ngModel]="search.name" 
-          (ngModelChange)="changeName($event)">
+       >
         </mat-form-field>
       </div>
   
@@ -21,8 +20,7 @@
           <mat-label>Par catégories :</mat-label>
           <mat-select 
           type="value" 
-          [ngModel]="search.categorie 
-          (ngModelChange)="changeCategorie($event)">
+          >
             <mat-option value="one">Restauration</mat-option>
             <mat-option value="two">Spa</mat-option>
             <mat-option value="three">Massothérapie</mat-option>
@@ -39,7 +37,7 @@
           type="number" 
           class="example-right-align" 
           min="250"
-          [ngModel]="search.price" (ngModelChange)="changePrice($event)">
+          >
           <span matTextPrefix>$&nbsp;</span>
         </mat-form-field>
       </div>
@@ -50,3 +48,12 @@
     </div>
   </div>
   
+<!-- Pour la rechercher 
+   [ngModel]="search.name" 
+          (ngModelChange)="changeName($event)"
+
+          [ngModel]="search.categorie 
+          (ngModelChange)="changeCategorie($event)"
+
+          [ngModel]="search.price" (ngModelChange)="changePrice($event)"
+-->

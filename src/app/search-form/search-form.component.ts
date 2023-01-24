@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Search } from '../search';
+/* import { Search } from '../search'; */
 
 
 
@@ -10,12 +10,12 @@ import { Search } from '../search';
   styleUrls: ['./search-form.component.css']
 })
 export class SearchFormComponent implements OnInit {
-@Input() search: Search;
+/* @Input() search: Search;
 @Output() searchChange = new EventEmitter();
 
 changeName(){
 let newSearch :  Search = {
-  name =  this.search.name,
+  name =  new value,
   categorie = this.search.categorie,
   price = this.search.price
 };
@@ -32,27 +32,30 @@ changeCategorie(){
     this.search = newSearch;
     this.searchChange.emit(newSearch);
   }
-  
 
-}
-  
-changePrice(){
-  let newSearch :  Search = {
-    name =  this.search.name,
-    categorie = this.search.categorie,
-    price = this.search.price
-  };
-    this.search = newSearch;
-    this.searchChange.emit(newSearch);
-  }
-  
-
-}
-
+  changePrice(){
+    let newSearch :  Search = {
+      name =  this.search.name,
+      categorie = this.search.categorie,
+      price = this.search.price
+    };
+      this.search = newSearch;
+      this.searchChange.emit(newSearch);
+    }
+     */
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  
 }
+  
+
+
+
+
+
+ 
+
+

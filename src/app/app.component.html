@@ -1,12 +1,18 @@
 
-<div>
+<!-- <div>
     {{search.name}}
     {{search.categorie}}
     {{search.price}}
-</div>
+</div> -->
 
-<app-search-form [(search)]="search"></app-search-form>
+<app-search-form ></app-search-form>
 
-<app-packages-list [search]="search"></app-packages-list>
+<app-packages-list ></app-packages-list>
 
 <router-outlet></router-outlet>
+
+
+<!-- Pour la recherche 
+    [(search)]="search"
+    [search]="search"
+-->

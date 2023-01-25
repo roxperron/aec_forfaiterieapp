@@ -5,7 +5,7 @@
 
 
 <section>
-    <app-package *ngFor="let package of packages" [package]="package"></app-package>
+    <app-package *ngFor="let package of packages | packgagebylodging : 'Les Spas de la nature' " [package]="package"></app-package>
 </section>
 
 <section>
@@ -21,4 +21,3 @@
 </section>
 
 
-<!-- ngFor ="let package of packages [package]="package" | premium -->

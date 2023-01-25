@@ -7,7 +7,7 @@ import { Package } from './package';
 export class PremiumPipe implements PipeTransform {
 
   transform(packages: Package[]): Package[]{
-    return packages.filter(package => package.prenium);
+    return packages.filter(p => p.prenium);
   }
 
 }

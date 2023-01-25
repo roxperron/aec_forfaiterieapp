@@ -6,8 +6,8 @@ import { Package } from './package';
 })
 export class PackgagebylodgingPipe implements PipeTransform {
 
-  transform(packages: Package[]): Package[]{
-    return packages.filter(package => package.prenium);
+  transform(packages: Package[], lodgingName = 'Manoir le Wilson' ): Package[]{
+    return packages.filter(p => p.lodging.name == lodgingName);
   }
 
 }

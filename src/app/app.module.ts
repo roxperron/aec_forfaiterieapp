@@ -34,7 +34,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { PackgagebylodgingPipe } from './packgagebylodging.pipe';
-/* import { PremiumPipe } from './premium.pipe'; */
+import { PremiumPipe } from './premium.pipe';
 
 
 
@@ -53,7 +53,7 @@ import { PackgagebylodgingPipe } from './packgagebylodging.pipe';
     ContactFormComponent,
     SearchFormComponent,
     PackgagebylodgingPipe,
-  /*   PremiumPipe, */
+    PremiumPipe,
   ],
 
   imports: [

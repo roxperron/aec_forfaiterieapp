@@ -35,6 +35,14 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { PackgagebylodgingPipe } from './packgagebylodging.pipe';
 import { PremiumPipe } from './premium.pipe';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+
+import { PackagesService } from './packages.service';
+import { HttpClientModule } from '@angular/common/http';
+import { NavigationComponent } from './navigation/navigation.component';
+
 
 
 
@@ -54,6 +62,8 @@ import { PremiumPipe } from './premium.pipe';
     SearchFormComponent,
     PackgagebylodgingPipe,
     PremiumPipe,
+    AdminPanelComponent,
+    NavigationComponent,
   ],
 
   imports: [
@@ -81,11 +91,14 @@ import { PremiumPipe } from './premium.pipe';
     MatSelectModule,
     MatSlideToggleModule,
     MatSnackBarModule,
+    MatPaginatorModule,
+    MatSortModule,
+    HttpClientModule,
  
 
   ],
 
-  providers: [],
+  providers: [PackagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

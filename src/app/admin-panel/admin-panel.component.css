@@ -1,0 +1,12 @@
+table{
+    width: 100%;
+}
+
+.admin__title{
+    font-family: Cookie; 
+    font-size: 50px;
+    padding: 50px;
+    text-align: center;
+    color: #FFFFFF;
+}
+

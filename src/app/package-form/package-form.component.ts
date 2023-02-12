@@ -1,6 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-/* import { inject} from '@angular/core';
-import {MatSnackBar, MatSnackBarRef} from '@angular/material/snack-bar'; */
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  PackagesService
+} from '../packages.service';
+import {
+  NgForm
+} from '@angular/forms';
+import {
+  Package
+} from '../package';
+import {
+  PACKAGES
+} from '../mock-packages';
+
+
+
 
 @Component({
   selector: 'app-package-form',
@@ -8,60 +24,50 @@ import {MatSnackBar, MatSnackBarRef} from '@angular/material/snack-bar'; */
   styleUrls: ['./package-form.component.css']
 })
 export class PackageFormComponent implements OnInit {
+  dataSource = PACKAGES;
 
-newPackage = {
-  name: '',
-  description: '',
-  lodging: '',
-  address: '',
-  city: '',
-  postalCode: '',
-  phoneNumber: '',
-  email: '',
-  website: '',
-  note: '',
-  startDate:'',
-  endDate:'',
-  prenium: '',
-  regPrice:'',
-  promoPrice:''
-}
-
-
-
-submitted = false;
-
-  constructor() { }
-
-  ngOnInit(): void {
+  newPackage = {
+    name: '',
+    description: '',
+    lodging: '',
+    address: '',
+    city: '',
+    postalCode: '',
+    phoneNumber: '',
+    email: '',
+    website: '',
+    note: '',
+    startDate: '',
+    endDate: '',
+    prenium: '',
+    regPrice: '',
+    promoPrice: ''
   }
 
-  onSubmit(){
-    this.submitted = true;
 
+  constructor(private packageService: PackagesService) {}
+
+  ngOnInit(): void {}
+
+  getPackages() {
+    this.packageService.getPackages().subscribe(
+      resultat => {
+        this.dataSource = resultat;
+
+      }
+    );
   }
 
-  openSnackBar(){
-    
-  }
-
- 
-
-/*   @Component({
-    selector: 'snack-bar-annotated-component-example',
-    templateUrl: 'snack-bar-annotated-component-example.html',
-    styleUrls: ['snack-bar-annotated-component-example.css'],
-  })
-  export class SnackBarAnnotatedComponentExample {
-    durationInSeconds = 5;
-  
-    constructor(private _snackBar: MatSnackBar) {}
-  
-    openSnackBar() {
-      this._snackBar.openFromComponent(PizzaPartyAnnotatedComponent, {
-        duration: this.durationInSeconds * 1000,
-      });
+/* 
+  addPackage(packageFormAdd: NgForm) {
+    if (packageFormAdd.valid) {
+      this.packageService.addPackage(this.newPackage).subscribe(
+        _ => {
+          packageFormAdd.resetForm();
+          this.getPackages();
+        }
+      );
     }
-  } */
 
+  } */
 }

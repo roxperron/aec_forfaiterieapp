@@ -42,6 +42,8 @@ import {MatSortModule} from '@angular/material/sort';
 import { PackagesService } from './packages.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NavigationComponent } from './navigation/navigation.component';
+import { AboutComponent } from './about/about.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -64,6 +66,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     PremiumPipe,
     AdminPanelComponent,
     NavigationComponent,
+    AboutComponent,
+    FooterComponent,
   ],
 
   imports: [

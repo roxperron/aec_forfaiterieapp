@@ -3,9 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Package } from './package';
 import { Observable } from 'rxjs';
 
-/* const httpOptions = {
+const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
-} */
+}
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +19,16 @@ export class PackagesService {
     return this.http.get<Package[]>(this.API_URL)
   }
 
-  /* 
-    addPackage(package:Package): Observalbe<void>{
-      return this.http.post<void>(this.API_URL, package, httpOptions);
+  
+    addPackage(packages:Package): Observable<void>{
+      return this.http.post<void>(this.API_URL, packages, httpOptions);
     }
-  */
+
+    deletePackage(id:number): Observable<void> {
+      console.log(id);
+      return this.http.delete<void>(`${this.API_URL}?id=${id}`, httpOptions);
+      }
+ 
 
 
 }

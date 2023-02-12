@@ -11,6 +11,13 @@
     
 }
 
+mat-form-field, mat-label{
+    font-family: Gilda Display;
+    color:#353535;
+    font-weight: bold;
+    width: 100%;
+}
+
 .submitReview--button{
     color:#FFFFFF;
     background-color: #284b63;

@@ -1,4 +1,6 @@
-<div class="mat-elevation-z8 py-5">
+
+<div class="container">
+<div>
   <h1 class="admin__title">Panneau d'administration des forfaits</h1>
  <app-package-form></app-package-form>
 
@@ -52,9 +54,18 @@
     </ng-container>
 
     <ng-container matColumnDef="newprice">
-      <th mat-header-cell *matHeaderCellDef> Prix promotionnel </th>
-      <td mat-cell *matCellDef="let element"> {{element.newprice}} </td>
+      <th class="text-center" mat-header-cell *matHeaderCellDef> Prix promotionnel </th>
+      <td class="text-center" mat-cell *matCellDef="let element"> {{element.newprice}} </td>
     </ng-container>
+
+    <ng-container matColumnDef="supprimer">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Supprimer</th>
+      <td mat-cell *matCellDef="let packages">
+      <button mat-icon-button aria-label="Supprimer" (click)="deletePackage(packages.id)">
+      <mat-icon>delete</mat-icon>
+      </button>
+      </td>
+      </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
@@ -62,4 +73,5 @@
 
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
   </mat-paginator>
+</div>
 </div>

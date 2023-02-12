@@ -1,12 +1,13 @@
 <div class="packageform">
   <h2 class="text-center py-5 packageform__title">Formulaire d'ajout de forfait</h2>
-<form class="d-flex flex-column justify-content-between align-items-center" (ngSubmit)="onSubmit()" #packageForm='ngForm'>
+<form class="d-flex flex-column justify-content-between align-items-center"  #packageFormAdd='ngForm'>
   <div class="form-group">
       <mat-form-field class="example-form-field">
         <mat-label>Nom du forfait:</mat-label>
         <input matInput type="text" required [(ngModel)]="newPackage.name" #packageName="ngModel" id="packageName" name="packageName" minlength="2" maxlength="50">
-        <span class="formError" *ngIf="!packageName.valid && packageName.touched">Veillez entre un nom de forfait valide entre 2 et 50 caractères.</span>
+      
       </mat-form-field>
+      <span class="formError" *ngIf="!packageName.valid && packageName.touched">Veillez entre un nom de forfait valide entre 2 et 50 caractères.</span>
   </div>
 
   <div class="form-group">
@@ -20,9 +21,8 @@
       <mat-form-field class="example-form-field">
         <mat-label>Nom de l'établissement:</mat-label>
         <input matInput type="text" required [(ngModel)]="newPackage.lodging" #lodging="ngModel" id="lodging" name="lodging" minlength="5" maxlength="100">
-        <span class="formError" *ngIf="!lodging.valid && lodging.touched">Veillez entre un nom d'établissement valide entre 5 et 100 caractères.</span>
-
       </mat-form-field>
+      <span class="formError" *ngIf="!lodging.valid && lodging.touched">Veillez entre un nom d'établissement valide entre 5 et 100 caractères.</span>
   </div>
 
   <div class="form-group">
@@ -57,9 +57,9 @@
   <div class="form-group">
       <mat-form-field class="example-form-field">
         <mat-label>Courriel:</mat-label>
-        <input matInput type="email" required [(ngModel)]="newPackage.email" #email="ngModel" id="email" name="email">
-        <span class="formError" *ngIf="!email.valid && email.touched">Entrez un courriel valide, par exemple: forfaiterie@gmail.com</span>
+        <input matInput type="email" required [(ngModel)]="newPackage.email" #email="ngModel" id="email" name="email">  
       </mat-form-field>
+      <span class="formError" *ngIf="!email.valid && email.touched">Entrez un courriel valide, par exemple: forfaiterie@gmail.com</span>
   </div>
 
   <div class="form-group">
@@ -105,21 +105,21 @@
   <div class="form-group">
       <mat-form-field class="example-form-field">
         <mat-label>Prix régulier:</mat-label>
-        <input  matInput type="number" required [(ngModel)]="newPackage.regPrice" #regPrice="ngModel" id="regPrice" name="regPrice" min="0">
-        <span class="formError" *ngIf="">Le prix régulier ne peut être égal ou plus petit que zéro dollard.</span>
+        <input  matInput type="number" required [(ngModel)]="newPackage.regPrice" #regPrice="ngModel" id="regPrice" name="regPrice" min="0"> 
       </mat-form-field>
+      <span class="formError" *ngIf="">Le prix régulier ne peut être égal ou plus petit que zéro dollard.</span>
   </div>
 
     <div class="form-group">
       <mat-form-field class="example-form-field">
         <mat-label>Prix promotionnel:</mat-label>
         <input matInput type="number" required [(ngModel)]="newPackage.promoPrice" id="promoPrice" name="promoPrice" min="0">
-        <span class="formError" *ngIf="">Le prix promotionnel ne peut être égal ou plus petit que zéro dollard.</span>
       </mat-form-field>
+      <span class="formError" *ngIf="">Le prix promotionnel ne peut être égal ou plus petit que zéro dollard.</span>
   </div>
 
   <div>
-    <button mat-stroked-button type="submit" (click)="openSnackBar()" class="submitPackage--button" aria-label="Ajouter le forfait">
+    <button mat-stroked-button type="submit"  class="submitPackage--button" aria-label="Ajouter le forfait">
       Ajouter
     </button>
 </div>

@@ -4,7 +4,7 @@
     margin:10px;
 }
 
-.package__card{
+mat-card{
     background-color:#3c6e71 ;
     color:#FFFFFF;
     font-family: Gilda Display;

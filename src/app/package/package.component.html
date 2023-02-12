@@ -1,13 +1,12 @@
-
+<div class="container">
 <div class="packageslist__container">
  
 <!-- Pour appliquer une couleur précise selon le rang du forfait -->
-<mat-card class="package__card" [ngStyle]="{'background-color':(package?.prenium ? '#e6b861': '')}">
+<mat-card [ngStyle]="{'background-color':(package?.prenium ? '#e6b861': '')}"  >
 
     <mat-card-header>
           <mat-card-title>{{package?.name}}</mat-card-title>
           <mat-card-subtitle> Description: {{package?.description}}</mat-card-subtitle>
-         
     </mat-card-header>
    
     <mat-card-content>
@@ -48,22 +47,8 @@
               Note sur 10 : {{r.rating}}
               Commentaire : {{r.comments}}
             </mat-card-subtitle>
-           
           </ng-container>
         </mat-card-content>
-      
-        <div>
-          <mat-card-actions class="packagesicon__container">
-            <button mat-icon-button><span class="infopackage__icon">
-              <mat-icon>info </mat-icon>
-              </span></button>
-            <button mat-icon-button><span class="buypackage__icon">
-            <mat-icon>   add_shopping_cart</mat-icon>
-              </span></button>
-            <button mat-icon-button><span class="favoritepackage__icon">
-              <mat-icon> favorite</mat-icon>
-              </span></button>
-          </mat-card-actions>
-      </div>
   </mat-card>
+</div>
 </div>

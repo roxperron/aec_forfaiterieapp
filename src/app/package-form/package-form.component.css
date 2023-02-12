@@ -12,8 +12,15 @@
     color: #284b63;
 }
 
+mat-form-field, mat-checkbox{
+    font-family: Gilda Display;
+    color:#353535;
+    font-weight: bold;
+    width: 100%;
+}
+
 .formError{
-    color:#FFFFFF;
+    color:crimson;
     border: 2px solid crimson;
 }
 

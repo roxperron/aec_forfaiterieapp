@@ -18,7 +18,7 @@ contactForm = new FormGroup({
   lastName : new FormControl(''),
   email : new FormControl(''),
   phoneNumber : new FormControl('null', Validators.required),
-  communicationEmail : new FormControl(''),
+  communicationEmail: new FormControl(''),
   communicationPhone : new FormControl(''),
   reason : new FormControl(''),
   comment : new FormControl(''),

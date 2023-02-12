@@ -1,7 +1,3 @@
-table{
-    width: 100%;
-}
-
 .admin__title{
     font-family: Cookie; 
     font-size: 50px;
@@ -9,4 +5,27 @@ table{
     text-align: center;
     color: #FFFFFF;
 }
+
+table{
+    width: 100%;
+    background-color: #d9d9d9;
+    font-family: Gilda Display;
+    color:#353535;
+    font-weight: bold;
+}
+
+th{
+    font-family: Cookie;
+    color:#353535;
+    font-size: 28px;
+}
+
+mat-paginator{
+    background-color: #d9d9d9;
+    font-family: Gilda Display;
+    color:#353535;
+    font-weight: bold;
+}
+
+
 

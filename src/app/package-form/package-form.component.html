@@ -11,7 +11,7 @@
   </div>
 
   <div class="form-group">
-      <mat-form-field class="example-full-width">
+      <mat-form-field  appearance="fill">
         <mat-label>Description du forfait: </mat-label>
         <textarea matInput placeholder="Inscrire une courte description" required [(ngModel)]="newPackage.description" id="packageDescription" name="packageDescription"></textarea>
       </mat-form-field>
@@ -20,7 +20,7 @@
   <div class="form-group">
       <mat-form-field class="example-form-field">
         <mat-label>Nom de l'établissement:</mat-label>
-        <input matInput type="text" required [(ngModel)]="newPackage.lodging" #lodging="ngModel" id="lodging" name="lodging" minlength="5" maxlength="100">
+        <input matInput type="text" required [(ngModel)]="newPackage.lodging.name" #lodging="ngModel" id="lodgingName" name="lodgingName" minlength="5" maxlength="100">
       </mat-form-field>
       <span class="formError" *ngIf="!lodging.valid && lodging.touched">Veillez entre un nom d'établissement valide entre 5 et 100 caractères.</span>
   </div>
@@ -28,14 +28,14 @@
   <div class="form-group">
       <mat-form-field class="example-form-field">
         <mat-label>Adresse:</mat-label>
-        <input matInput type="text" required [(ngModel)]="newPackage.address" id="address" name="address">
+        <input matInput type="text" required [(ngModel)]="newPackage.lodging.address" id="address" name="address">
       </mat-form-field>
   </div>
 
   <div class="form-group">
       <mat-form-field class="example-form-field">
         <mat-label>Ville:</mat-label>
-        <input matInput type="text" required [(ngModel)]="newPackage.city" id="city" name="city">
+        <input matInput type="text" required [(ngModel)]="newPackage.lodging.city" id="city" name="city">
       </mat-form-field>
   </div>
 
@@ -43,21 +43,21 @@
   <div class="form-group">
       <mat-form-field class="example-form-field">
         <mat-label>Code postal:</mat-label>
-        <input matInput type="text" required [(ngModel)]="newPackage.postalCode" id="postalCode" name="postalCode">
+        <input matInput type="text" required [(ngModel)]="newPackage.lodging.postalcode" id="postalCode" name="postalCode">
       </mat-form-field>
   </div>
 
   <div class="form-group">
       <mat-form-field class="example-form-field">
         <mat-label>Téléphone:</mat-label>
-        <input matInput type="tel" required [(ngModel)]="newPackage.phoneNumber"  id="phoneNumber" name="phoneNumber">
+        <input matInput type="tel" required [(ngModel)]="newPackage.lodging.phonenumber"  id="phoneNumber" name="phoneNumber">
       </mat-form-field>
   </div>
 
   <div class="form-group">
       <mat-form-field class="example-form-field">
         <mat-label>Courriel:</mat-label>
-        <input matInput type="email" required [(ngModel)]="newPackage.email" #email="ngModel" id="email" name="email">  
+        <input matInput type="email" required [(ngModel)]="newPackage.lodging.email" #email="ngModel" id="email" name="email">  
       </mat-form-field>
       <span class="formError" *ngIf="!email.valid && email.touched">Entrez un courriel valide, par exemple: forfaiterie@gmail.com</span>
   </div>
@@ -65,22 +65,22 @@
   <div class="form-group">
       <mat-form-field class="example-form-field">
         <mat-label>Site web:</mat-label>
-        <input matInput type="text" required [(ngModel)]="newPackage.website" id="website" name="website">
+        <input matInput type="text" required [(ngModel)]="newPackage.lodging.website" id="website" name="website">
       </mat-form-field>
   </div>
-
+<!-- 
   <div class="form-group">
       <mat-form-field class="example-full-width">
         <mat-label>Note: </mat-label>
         <textarea matInput placeholder="Inscrire une note" required [(ngModel)]="newPackage.note" id="note" name="note"></textarea>
       </mat-form-field>
-  </div>
+  </div> -->
 
 
   <div class="form-group">
       <mat-form-field appearance="fill">
         <mat-label>Date de début:</mat-label>
-        <input matInput [matDatepicker]="picker1" required [(ngModel)]="newPackage.startDate" id="startDate" name="startDate">
+        <input matInput [matDatepicker]="picker1" required [(ngModel)]="newPackage.startdate" id="startdate" name="startdate">
         <mat-hint>MM/JJ/AAAA</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
@@ -91,7 +91,7 @@
   <div class="form-group">
       <mat-form-field appearance="fill">
         <mat-label>Date de fin: </mat-label>
-        <input matInput [matDatepicker]="picker2" required [(ngModel)]="newPackage.endDate" id="endDate" name="endDate">
+        <input matInput [matDatepicker]="picker2" required [(ngModel)]="newPackage.enddate" id="enddate" name="enddate">
         <mat-hint>MM/JJ/AAAA</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker #picker2></mat-datepicker>
@@ -105,7 +105,7 @@
   <div class="form-group">
       <mat-form-field class="example-form-field">
         <mat-label>Prix régulier:</mat-label>
-        <input  matInput type="number" required [(ngModel)]="newPackage.regPrice" #regPrice="ngModel" id="regPrice" name="regPrice" min="0"> 
+        <input  matInput type="number" required [(ngModel)]="newPackage.price" #regPrice="ngModel" id="price" name="price" min="0"> 
       </mat-form-field>
       <span class="formError" *ngIf="">Le prix régulier ne peut être égal ou plus petit que zéro dollard.</span>
   </div>
@@ -113,13 +113,13 @@
     <div class="form-group">
       <mat-form-field class="example-form-field">
         <mat-label>Prix promotionnel:</mat-label>
-        <input matInput type="number" required [(ngModel)]="newPackage.promoPrice" id="promoPrice" name="promoPrice" min="0">
+        <input matInput type="number" required [(ngModel)]="newPackage.newprice" id="newprice" name="newprice" min="0">
       </mat-form-field>
       <span class="formError" *ngIf="">Le prix promotionnel ne peut être égal ou plus petit que zéro dollard.</span>
   </div>
 
   <div>
-    <button mat-stroked-button type="submit"  class="submitPackage--button" aria-label="Ajouter le forfait">
+    <button mat-stroked-button type="submit"  class="submitPackage--button" aria-label="Ajouter le forfait" (click)="addPackage(packageFormAdd)">
       Ajouter
     </button>
 </div>

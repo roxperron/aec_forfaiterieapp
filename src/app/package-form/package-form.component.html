@@ -2,6 +2,14 @@
   <h2 class="text-center py-5 packageform__title">Formulaire d'ajout de forfait</h2>
 <form class="d-flex flex-column justify-content-between align-items-center"  #packageFormAdd='ngForm'>
   <div class="form-group">
+    <mat-form-field class="example-form-field">
+      <mat-label>Code du forfait:</mat-label>
+      <input matInput type="text" required [(ngModel)]="newPackage.code" #packageCode="ngModel" id="packageCode" name="packageCode" minlength="2" maxlength="50">
+    </mat-form-field>
+    <span class="formError" *ngIf="!packageCode.valid && packageCode.touched">Veillez entre un code de forfait valide entre 2 et 50 caractères.</span>
+</div>
+
+ <div class="form-group">
       <mat-form-field class="example-form-field">
         <mat-label>Nom du forfait:</mat-label>
         <input matInput type="text" required [(ngModel)]="newPackage.name" #packageName="ngModel" id="packageName" name="packageName" minlength="2" maxlength="50">
@@ -11,12 +19,15 @@
   </div>
 
   <div class="form-group">
-      <mat-form-field  appearance="fill">
-        <mat-label>Description du forfait: </mat-label>
-        <textarea matInput placeholder="Inscrire une courte description" required [(ngModel)]="newPackage.description" id="packageDescription" name="packageDescription"></textarea>
-      </mat-form-field>
-  </div>
+    <mat-form-field  appearance="fill">
+      <mat-label>Description du forfait: </mat-label>
+      <textarea matInput placeholder="Inscrire une courte description" required [(ngModel)]="newPackage.description" id="packageDescription" name="packageDescription"></textarea>
+    </mat-form-field>
+</div>
 
+
+
+<div class="d-flex justify-content-between">
   <div class="form-group">
       <mat-form-field class="example-form-field">
         <mat-label>Nom de l'établissement:</mat-label>
@@ -68,13 +79,7 @@
         <input matInput type="text" required [(ngModel)]="newPackage.lodging.website" id="website" name="website">
       </mat-form-field>
   </div>
-<!-- 
-  <div class="form-group">
-      <mat-form-field class="example-full-width">
-        <mat-label>Note: </mat-label>
-        <textarea matInput placeholder="Inscrire une note" required [(ngModel)]="newPackage.note" id="note" name="note"></textarea>
-      </mat-form-field>
-  </div> -->
+</div>
 
 
   <div class="form-group">
@@ -119,9 +124,13 @@
   </div>
 
   <div>
-    <button mat-stroked-button type="submit"  class="submitPackage--button" aria-label="Ajouter le forfait" (click)="addPackage(packageFormAdd)">
-      Ajouter
+    <button mat-button mat-aria-label="Annuler" (click)="cancel()">
+        Annuler
+    </button>
+
+    <button mat-button mat-aria-label="Ajouter" [disabled]="!packageFormAdd.form.valid" (click)="addPackage(packageFormAdd)">
+        Ajouter
     </button>
 </div>
+
 </form>
-</div>

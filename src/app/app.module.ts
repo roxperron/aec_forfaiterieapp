@@ -38,12 +38,17 @@ import { PremiumPipe } from './premium.pipe';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { PackagesService } from './packages.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NavigationComponent } from './navigation/navigation.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
+import { PackageXComponent } from './package-x/package-x.component';
+import { PackageYComponent } from './package-y/package-y.component';
+import { SmallpricePipe } from './smallprice.pipe';
+
 
 
 
@@ -68,6 +73,9 @@ import { FooterComponent } from './footer/footer.component';
     NavigationComponent,
     AboutComponent,
     FooterComponent,
+    PackageXComponent,
+    PackageYComponent,
+    SmallpricePipe,
   ],
 
   imports: [
@@ -98,6 +106,7 @@ import { FooterComponent } from './footer/footer.component';
     MatPaginatorModule,
     MatSortModule,
     HttpClientModule,
+    MatDialogModule,
  
 
   ],

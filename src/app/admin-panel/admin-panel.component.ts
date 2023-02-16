@@ -24,6 +24,8 @@ import {
 import {
   MatSnackBar
 } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { PackageFormComponent } from '../package-form/package-form.component';
 
 
 @Component({
@@ -33,7 +35,7 @@ import {
 })
 export class AdminPanelComponent implements OnInit {
   packages: Package[] = [];
-  displayedColumns = ['code', 'name', 'lodgingName', 'startdate', 'enddate', 'price', 'newprice', 'supprimer'];
+  displayedColumns = ['code', 'name', 'lodgingName', 'startdate', 'enddate', 'price', 'newprice', 'prenium', 'supprimer'];
   dataSourcePackage: MatTableDataSource < Package > = new MatTableDataSource();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -41,7 +43,7 @@ export class AdminPanelComponent implements OnInit {
 
 
 
-  constructor(private packageService: PackagesService, private _snackBar: MatSnackBar) {}
+  constructor(private packageService: PackagesService, private _snackBar: MatSnackBar, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.getPackages();
@@ -55,9 +57,18 @@ export class AdminPanelComponent implements OnInit {
         this.dataSourcePackage.sort = this.sort;
       }
     );
+  }
 
-
-
+  openDialog(packages?: Package) { 
+    
+    const dialogRef = this.dialog.open(PackageFormComponent, {
+        data: packages
+      });
+    
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Le dialog du formulaire de forfait a été fermé.');
+      this.getPackages();
+    });
   }
 
   applyFilter(event: Event) {

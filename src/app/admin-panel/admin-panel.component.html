@@ -2,7 +2,12 @@
 <div class="container">
 <div>
   <h1 class="admin__title">Panneau d'administration des forfaits</h1>
- <app-package-form></app-package-form>
+<!--  <app-package-form></app-package-form> -->
+
+<button mat-fab color="primary" aria-label="Ajouter" (click)="openDialog(undefined)">
+  <mat-icon>add</mat-icon>
+</button>
+
 
 
 <div class="d-flex justify-content-end px-5">
@@ -12,7 +17,6 @@
     <mat-icon matSuffix>search</mat-icon>
   </mat-form-field>
 </div>
-
 
 
 <h2 class="admin__title">Tableaux des forfaits en vigeur</h2>
@@ -56,6 +60,11 @@
     <ng-container matColumnDef="newprice">
       <th class="text-center" mat-header-cell *matHeaderCellDef> Prix promotionnel </th>
       <td class="text-center" mat-cell *matCellDef="let element"> {{element.newprice}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="prenium">
+      <th class="text-center" mat-header-cell *matHeaderCellDef> Premium</th>
+      <td class="text-center" mat-cell *matCellDef="let element"> {{element.prenium}} </td>
     </ng-container>
 
     <ng-container matColumnDef="supprimer">

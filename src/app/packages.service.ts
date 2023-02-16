@@ -28,6 +28,10 @@ export class PackagesService {
       console.log(packages.enddate);
       return this.http.post<void>(this.API_URL, packages, httpOptions);
     }
+    
+    updatePackage(packages:Package): Observable<void>{
+      return this.http.put<void>(`${this.API_URL}?id=${packages.id}`, packages, httpOptions);
+    }
 
     deletePackage(id:number): Observable<void> {
       console.log(id);

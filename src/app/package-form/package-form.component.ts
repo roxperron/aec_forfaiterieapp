@@ -1,9 +1,8 @@
-import {Component,OnInit} from '@angular/core';
+import {Component,Inject,OnInit} from '@angular/core';
 import {PackagesService} from '../packages.service';
 import {NgForm} from '@angular/forms';
 import {Package} from '../package';
-import {MatSnackBar} from '@angular/material/snack-bar';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 @Component({
@@ -44,7 +43,15 @@ export class PackageFormComponent implements OnInit {
   }
 
 
-  constructor(private packageService: PackagesService, private _snackBar : MatSnackBar, public dialogRef: MatDialogRef<PackageFormComponent>) {}
+  constructor(
+    private packageService: PackagesService,  
+    public dialogRef: MatDialogRef<PackageFormComponent>, 
+    @Inject(MAT_DIALOG_DATA) public data: Package) {
+
+      if(data){
+        this.newPackage = data;
+      }
+    }
 
   ngOnInit(): void {}
 
@@ -59,6 +66,18 @@ export class PackageFormComponent implements OnInit {
       );
     }
   }
+
+  updatePackage(packageFormAdd: NgForm) {
+    if (packageFormAdd.valid) {
+      this.packageService.updatePackage(this.newPackage).subscribe(
+        _ => {
+          packageFormAdd.resetForm();
+          this.dialogRef.close("Forfait modifié!");
+        }
+      );
+    }
+  }
+
    cancel(){
     this.dialogRef.close();
    }

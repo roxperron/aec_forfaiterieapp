@@ -59,7 +59,7 @@ export class AdminPanelComponent implements OnInit {
     );
   }
 
-  openDialog(packages?: Package) { 
+openDialog(packages?: Package) { 
     
     const dialogRef = this.dialog.open(PackageFormComponent, {
         data: packages

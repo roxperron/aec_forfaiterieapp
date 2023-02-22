@@ -61,7 +61,7 @@ export class PackageFormComponent implements OnInit {
       this.packageService.addPackage(this.newPackage).subscribe(
         _ => {
           packageFormAdd.resetForm();
-          this.dialogRef.close();
+          this.dialogRef.close("Forfait ajouté!");
         }
       );
     }

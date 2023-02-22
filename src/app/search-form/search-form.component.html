@@ -1,59 +1,6 @@
-<div class="searchcontainer ">
-    <h2 class="search__title">Recherchez un forfait</h2>
-    <p class="text-center py-5">Vous pouvez effectuer une recherche de forfaits par nom, par catégorie ou par prix.</p>
-    <form class="d-flex justify-content-between align-items-center" #searchForm='ngForm'>
-      <div>
-        <mat-form-field appearance="fill">
-          <mat-label> Par nom: </mat-label>
-          <input 
-          matInput 
-          type="text"
-          id="packageNameSearch" 
-          maxlength="100"
-       >
-        </mat-form-field>
-      </div>
-  
-  
-      <div>
-        <mat-form-field appearance="fill">
-          <mat-label>Par catégories :</mat-label>
-          <mat-select 
-          type="value" 
-          >
-            <mat-option value="one">Restauration</mat-option>
-            <mat-option value="two">Spa</mat-option>
-            <mat-option value="three">Massothérapie</mat-option>
-            <mat-option value="four">Nature</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-  
-      <div>
-        <mat-form-field appearance="fill" floatLabel="always">
-          <mat-label>Par prix:</mat-label>
-          <input 
-          matInput 
-          type="number" 
-          class="example-right-align" 
-          min="250"
-          >
-          <span matTextPrefix>$&nbsp;</span>
-        </mat-form-field>
-      </div>
-  
-    </form>
-    <div class="d-flex justify-content-center">
-      <button mat-button class="submitSearch--button" type="submit">Rechercher</button>
-    </div>
-  </div>
-  
-<!-- Pour la rechercher 
-   [ngModel]="search.name" 
-          (ngModelChange)="changeName($event)"
-
-          [ngModel]="search.categorie 
-          (ngModelChange)="changeCategorie($event)"
-
-          [ngModel]="search.price" (ngModelChange)="changePrice($event)"
--->
+<mat-form-field class="example-form-field">
+  <input matInput type="text" placeholder="Clearable input" [(ngModel)]="value">
+  <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>

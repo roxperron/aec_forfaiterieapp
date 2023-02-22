@@ -67,6 +67,9 @@ openDialog(packages?: Package) {
     
     dialogRef.afterClosed().subscribe(result => {
       console.log('Le dialog du formulaire de forfait a été fermé.');
+      this._snackBar.open(result, undefined, {
+        duration: 2000
+      });
       this.getPackages();
     });
   }

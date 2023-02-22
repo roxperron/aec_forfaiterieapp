@@ -30,6 +30,8 @@ export class PackagesService {
     }
     
     updatePackage(packages:Package): Observable<void>{
+      packages.startdate = formatDate(packages.startdate, 'YYYY-MM-dd', 'en-US');
+      packages.enddate = formatDate(packages.enddate, 'YYYY-MM-dd', 'en-US');
       return this.http.put<void>(`${this.API_URL}?id=${packages.id}`, packages, httpOptions);
     }
 

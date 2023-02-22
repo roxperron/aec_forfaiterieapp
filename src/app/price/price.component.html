@@ -4,6 +4,6 @@
 
  
 <!-- S'il y a un nouveau prix au forfait   "  -->
-<span class="d-flex justify-content-center align-items-center" *ngIf="newprice"> Prix promotionnel : {{newprice | currency}} $ <br> Économies de: {{price - newprice | currency}} $</span>
+<span class="d-flex justify-content-center align-items-center" *ngIf="newprice && newprice > 0"> Prix promotionnel : {{newprice | currency}} $ <br> Économies de: {{price - newprice | currency}} $</span>
 </div>
 

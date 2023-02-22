@@ -1,19 +1,22 @@
-<nav class="navbar navbar-expand-lg px-5 py-5">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-            <li class="navbar-brand nav__title"><a>La forfaiterie</a></li>
-            <li class="nav-item nav__text"><a class="nav-link nav__text" routerLink="/packages">Forfaits</a></li>
-            <li class="nav-item nav__text"><a class="nav-link nav__text" routerLink="/packagex">Offres exclusives</a></li>
-            <li class="nav-item nav__text"><a class="nav-link nav__text" routerLink="/packagey">Offres à petit prix</a></li>
-            <li class="nav-item nav__text"><a class="nav-link nav__text" routerLink="/about">À propos</a></li>
-            <li class="nav-item nav__text"><a class="nav-link nav__text" routerLink="/contact">Contact</a></li>
-            <li class="nav-item nav__text"><a class="nav-link nav__text" routerLink="/admin">Administration</a></li>
-        </ul>
-    </div> 
- 
-    </div>
+<nav class="container-fluid">
+  <div class="d-flex justify-content-between">
+    <mat-toolbar class="nav__title">La forfaiterie</mat-toolbar>
+
+    <button class="nav__button" mat-button [matMenuTriggerFor]="menu"><mat-icon class="material-icons-outlined">
+        menu
+    </mat-icon></button>
+    <mat-menu #menu="matMenu">
+      <ul class="navbar-nav">
+        <li class="nav-item nav__text"><a class="nav-link nav__text" routerLink="/packages">Forfaits</a></li>
+        <li class="nav-item nav__text"><a class="nav-link nav__text" routerLink="/packagex">Offres exclusives</a></li>
+        <li class="nav-item nav__text"><a class="nav-link nav__text" routerLink="/packagey">Offres à petit prix</a></li>
+        <li class="nav-item nav__text"><a class="nav-link nav__text" routerLink="/about">À propos</a></li>
+        <li class="nav-item nav__text"><a class="nav-link nav__text" routerLink="/contact">Contact</a></li>
+        <li class="nav-item nav__text"><a class="nav-link nav__text" routerLink="/admin">Administration</a></li>
+      </ul>
+    </mat-menu>
+  </div>
 </nav>
+
+
+

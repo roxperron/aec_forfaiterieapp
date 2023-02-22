@@ -31,10 +31,17 @@
   <div class="form-group">
       <mat-form-field class="example-form-field">
         <mat-label>Nom de l'établissement:</mat-label>
-        <input matInput type="text" required [(ngModel)]="newPackage.lodging.name" #lodging="ngModel" id="lodgingName" name="lodgingName" minlength="5" maxlength="100">
+        <input matInput type="text" required [(ngModel)]="newPackage.lodging.name" #lodgingName="ngModel" id="lodgingName" name="lodgingName" minlength="5" maxlength="100">
       </mat-form-field>
-      <span class="formError" *ngIf="!lodging.valid && lodging.touched">Veillez entre un nom d'établissement valide entre 5 et 100 caractères.</span>
+      <span class="formError" *ngIf="!lodgingName.valid && lodgingName.touched">Veillez entre un nom d'établissement valide entre 5 et 100 caractères.</span>
   </div>
+
+  <div class="form-group">
+    <mat-form-field  appearance="fill">
+      <mat-label>Description de l'établissement: </mat-label>
+      <textarea matInput placeholder="Inscrire une courte description" required [(ngModel)]="newPackage.lodging.description" id="lodgingDescription" name="lodgingDescription"></textarea>
+    </mat-form-field>
+</div>
 
   <div class="form-group">
       <mat-form-field class="example-form-field">
@@ -118,13 +125,13 @@
     <div class="form-group">
       <mat-form-field class="example-form-field">
         <mat-label>Prix promotionnel:</mat-label>
-        <input matInput type="number" required [(ngModel)]="newPackage.newprice" id="newprice" name="newprice" min="0">
+        <input matInput type="number" [(ngModel)]="newPackage.newprice" id="newprice" name="newprice" min="0">
       </mat-form-field>
       <span class="formError" *ngIf="">Le prix promotionnel ne peut être égal ou plus petit que zéro dollard.</span>
   </div>
 
   <div>
-    <button *ngIf="newPackage.id; else addButton" mat-button mat-aria-label="Modifier" [disabled]="!packageFormAdd.form.valid" (click)="updatePackage(packageFormAdd)"></button>
+    <button *ngIf="newPackage.id; else addButton" mat-button mat-aria-label="Modifier" [disabled]="!packageFormAdd.form.valid" (click)="updatePackage(packageFormAdd)">Modifier</button>
     
     <ng-template #addButton>
     <button mat-button mat-aria-label="Ajouter" [disabled]="!packageFormAdd.form.valid" (click)="addPackage(packageFormAdd)">

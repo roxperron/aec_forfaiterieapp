@@ -12,7 +12,6 @@ import { PriceComponent } from './price/price.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { ReviewsFormComponent } from './reviews-form/reviews-form.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
-
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
@@ -39,7 +38,6 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatDialogModule} from '@angular/material/dialog';
-
 import { PackagesService } from './packages.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -48,6 +46,11 @@ import { FooterComponent } from './footer/footer.component';
 import { PackageXComponent } from './package-x/package-x.component';
 import { PackageYComponent } from './package-y/package-y.component';
 import { SmallpricePipe } from './smallprice.pipe';
+import { SideNavComponent } from './side-nav/side-nav.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
+
 
 
 
@@ -76,6 +79,9 @@ import { SmallpricePipe } from './smallprice.pipe';
     PackageXComponent,
     PackageYComponent,
     SmallpricePipe,
+    SideNavComponent,
+  
+
   ],
 
   imports: [
@@ -107,6 +113,9 @@ import { SmallpricePipe } from './smallprice.pipe';
     MatSortModule,
     HttpClientModule,
     MatDialogModule,
+    MatSidenavModule,
+    MatMenuModule,
+    MatToolbarModule,
  
 
   ],

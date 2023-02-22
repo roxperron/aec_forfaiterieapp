@@ -1,11 +1,28 @@
-.nav__title {
+.nav__title, .nav__button {
     font-family: Cookie;
     color:#ffffff;
-    font-size: 72px;
+    background-color: #284b63;
+    font-size: 56px;
+    margin-top: 20px;
 }
 
 .nav__text{
     font-family: Cookie;
-    color:#ffffff;
+    color:#284b63;
     font-size:32px;
+    text-align: center;
+    margin: 0 10px 0 10px;
+}
+
+
+
+
+.mat-icon {
+    font-size: 72px;
+    height: 100px ;
+    width: 50px;
+}
+
+#mat-menu{
+    width: 100%;
 }

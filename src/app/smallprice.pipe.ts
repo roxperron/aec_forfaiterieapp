@@ -6,8 +6,8 @@ import { Package } from './package';
 })
 export class SmallpricePipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(packages: Package[]): Package[] {
+    return packages.filter(packages => packages.newprice > 0);
   }
 
 }

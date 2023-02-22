@@ -46,9 +46,11 @@ import { FooterComponent } from './footer/footer.component';
 import { PackageXComponent } from './package-x/package-x.component';
 import { PackageYComponent } from './package-y/package-y.component';
 import { SmallpricePipe } from './smallprice.pipe';
-import { SideNavComponent } from './side-nav/side-nav.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { NgChartsModule } from 'ng2-charts';
+import { AttractionsGraphComponent } from './attractions-graph/attractions-graph.component';
+import { SalesGraphComponent } from './sales-graph/sales-graph.component';
 
 
 
@@ -79,7 +81,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     PackageXComponent,
     PackageYComponent,
     SmallpricePipe,
-    SideNavComponent,
+    AttractionsGraphComponent,
+    SalesGraphComponent,
+ 
+
   
 
   ],
@@ -116,7 +121,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatSidenavModule,
     MatMenuModule,
     MatToolbarModule,
- 
+    NgChartsModule,
 
   ],
 

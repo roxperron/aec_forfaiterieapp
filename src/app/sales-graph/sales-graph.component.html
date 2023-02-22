@@ -1,0 +1,7 @@
+<h2 class="admin__title">Ventes des forfaits</h2>
+<p class="admin__text">Forfaits vendus  pendant les 6 derniers mois</p>
+<div>
+  <canvas id="monGraphique" baseChart [data]="mesDonnees" [options]="monGraphique.options"
+    [legend]="monGraphique.legende" [type]="monGraphique.type" height="300px">
+  </canvas>
+</div>

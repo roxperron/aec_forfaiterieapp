@@ -1,0 +1,17 @@
+.admin__title{
+    font-family: Cookie; 
+    font-size: 50px;
+    padding: 50px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+
+.admin__text{
+    font-family: Gilda Display;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    color: #FFFFFF;
+}
+

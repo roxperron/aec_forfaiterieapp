@@ -1,6 +1,6 @@
 .formreviews{
-    background-color:#d9d9d9 ;
-    color:#284b63;
+    background-color:#3c6e71 ;
+    color:#d9d9d9;
     border-radius: 5px;
 }
 
@@ -19,8 +19,8 @@ mat-form-field, mat-label{
 }
 
 .submitReview--button{
-    color:#FFFFFF;
-    background-color: #284b63;
+    color:#3c6e71;
+    background-color: #d9d9d9;
     padding: 5px;
     border-radius: 5%;
 }

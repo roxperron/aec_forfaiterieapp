@@ -79,6 +79,6 @@ export class PackageFormComponent implements OnInit {
   }
 
    cancel(){
-    this.dialogRef.close();
+    this.dialogRef.close("Confirmation d'annulation.");
    }
 }
